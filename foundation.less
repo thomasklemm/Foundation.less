@@ -137,6 +137,22 @@
   }
 }
 
+// CSS3 Change Box Model
+// Opacity
+.opacity(@opacity: 100) {
+	filter: e(%("alpha(opacity=%d)", @opacity));
+	-khtml-opacity: @op / 100;
+	-moz-opacity: @op / 100;
+	opacity: @op / 100;
+}
+
+// Box Sizing
+.box-sizing(@sizing) {
+  -webkit-box-sizing: @sizing;
+  -moz-box-sizing: @sizing;
+  -ms-box-sizing: @sizing;
+  box-sizing: @sizing;
+}
 
 // Miscellaneous Helper Mixins
 //---------------------------------------------*/
