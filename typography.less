@@ -1,13 +1,16 @@
-/* !Typography */
+/*
+  typography.less v1.0
+  A good set if starting typographical styles for any project
+*/
 
-/* Default font settings. The font-size percentage is of 16px. (0.75 * 16px = 12px) */
+// Default font settings. The font-size percentage is of 16px. (0.75 * 16px = 12px)
 html { font-size: 16px; }
 
 body { color: #222; background: #fff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
 
-/* Headings
----------------------------------------------*/
+// Headings
+// ---------------------------------------------
 h1,h2,h3,h4,h5,h6 { font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif; font-weight: normal; color: #111; }
 
 h1 { font-size: 3em; line-height: 1; margin-bottom: 0.5em; }
@@ -23,8 +26,8 @@ h4 img, h5 img, h6 img {
 }
 
 
-/* Text Elements
----------------------------------------------*/
+// Text Elements
+// ---------------------------------------------
 
 p           { margin: 0 0 1.5em; font-weight: normal; font-size: 100%;}
 p img       { float: left; margin: 1.5em 1.5em 1.5em 0; padding: 0; }
@@ -38,19 +41,44 @@ blockquote  { margin: 1.5em; color: #666; font-style: italic; }
 strong      { font-weight: bold; }
 em,dfn      { font-style: italic; }
 dfn         { font-weight: bold; }
-sup, sub    { line-height: 0; }
 
-abbr, 
+// Position subscript and superscript content without affecting line-height: gist.github.com/413930
+sub, 
+sup         { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup         { top: -0.5em; }
+sub         { bottom: -0.25em; }
+
+abbr[title], 
 acronym     { border-bottom: 1px dotted #666; }
+
 address     { margin: 0 0 1.5em; font-style: italic; }
 del         { color:#666; }
 
-pre,code    { margin: 1.5em 0; white-space: pre; }
-pre,code,tt { font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5; } 
+// Redeclare monospace font family: en.wikipedia.org/wiki/User:Davidgothberg/Test59
+pre, 
+code, 
+kbd, 
+samp        { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+
+// Improve readability of pre-formatted text in all browsers
+pre         { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+pre,
+code        { margin: 1.5em 0; white-space: pre; }
+
+pre,
+code,
+tt          { font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5; }
+
+hr          { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+ins         { background: #ff9; color: #000; text-decoration: none; }
+
+mark        { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
 
 
-/* Lists
----------------------------------------------*/
+// Lists
+// ---------------------------------------------
 
 li ul, 
 li ol       { margin:0 1.5em; }
@@ -64,62 +92,41 @@ dl dt       { font-weight: bold; }
 dd          { margin-left: 1.5em;}
 
 
-/* Tables
----------------------------------------------*/
+// Tables
+// ---------------------------------------------
 table       { margin-bottom: 1.4em; width:100%; }
 th          { font-weight: bold;}
-th,td       { padding: 4px 10px 4px 5px; }
+th,
+td          { padding: 4px 10px 4px 5px; }
 tr.even td  { background: #E5ECF9; }
 tfoot       { font-style: italic; }
 caption     { background: #eee; }
 
-/* !IE Fixes */
-/* Fixes incorrect styling of legend in IE6. */
-* html legend { margin:-18px -8px 16px 0;padding:0; }
+// Forms
+// ---------------------------------------------
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
 
-/* Fixes incorrect placement of ol numbers in IE6/7. */
-#ie-root ol,
+
+// IE Fixes
+// ---------------------------------------------
+// Fixes incorrect styling of legend in IE6.
+* html legend { margin:-18px -8px 16px 0; padding:0; }
+
+// Fixes incorrect placement of ol numbers in IE6/7.
 .ie6 ol, 
 .ie7 ol { margin-left: 2em; }
 
-/* Fixes wrong line-height on sup/sub in IE. */
-#ie-root sup,
+// Fixes wrong line-height on sup/sub in IE.
 .ie6 sup, 
 .ie7 sup { vertical-align: text-top; }
 	
-#ie-root sub,
 .ie6 sub, 
 .ie7 sub { vertical-align: text-bottom; }
 
-/* Fixes IE7 missing wrapping of code elements. */
+// Fixes IE7 missing wrapping of code elements.
 html>body p code { *white-space:normal; } 
 
-/*  Sets proper <hr> margins in IE 6&7*/
-#ie-root hr,
+//  Sets proper <hr> margins in IE 6&7
 .ie6 hr, 
 .ie7 hr  { margin: -8px auto 11px; }
-
-/* !Miscellaneous */
-strong { font-weight: bold; }
-em {font-style: italic}
-.highlight { background: #ff0; }
-.float-left  { float:left }
-.float-right { float:right }
-.hidden { display: none; }
-		
-/* Clearing floats without extra markup based on How To Clear Floats 
-   Without Structural Markup by PiE [http://www.positioniseverything.net/easyclearing.html] */
-.clearfix:after, .container:after {
-	content: "."; 
-	display: block; 
-	height: 0; 
-	clear: both; 
-	visibility: hidden;
-}
-html>body .mozclear {
-	border-bottom: 1px solid white;	/* help mozilla recognize empty  clearing element */
-	margin-bottom: -1px; /* compensate for 1px space used by border */
-}	
-.clearfix {display: inline-block;}
-* html .clearfix,
-.clearfix {display: block;}
