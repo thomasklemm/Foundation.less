@@ -6,17 +6,14 @@
 /* !LESS Variables  */
 /* --------------------------------------------- */
 
-//--- Foundation.less defaults.
-@default-radius: 2px; // req. for border radii
-@default-shadow: 0 0 5px rgba(0,0,0,.6); // req. for box shadows
-@default-stripe-width: 33px; // req. for stripe patterns
 
 //--- Typgraphy
 @heading: Helvetica, "Helvetica Neue", Arial, sans-serif;
 @paragraph: "Helvetica Neue", Arial, Helvetica, sans-serif;
 
 //--- Misc.
-@baseline: 20px;
+// base font size is 16px, set in typography.less
+@baseline: 1.25em;
 @default-margin: @baseline;
 @default-padding: @baseline;
 @page-width: 960px;
@@ -24,3 +21,15 @@
 
 /* !MORE OF YOUR STYLES BELOW  */
 /* --------------------------------------------- */
+
+
+// Media queries
+@media only screen and (min-width: 480px) {
+  /* Style adjustments for viewports 480px and over go here */
+
+}
+
+@media only screen and (min-width: 768px) {
+  /* Style adjustments for viewports 768px and over go here */
+
+}
